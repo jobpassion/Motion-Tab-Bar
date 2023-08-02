@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
 const double ICON_OFF = -3;
-const double ICON_ON = 0;
-const double TEXT_OFF = 3;
+const double ICON_ON = -1.5;
+// const double ICON_ON = 0;
+const double TEXT_OFF = 1;
 const double TEXT_ON = 1;
 const double ALPHA_OFF = 0;
 const double ALPHA_ON = 1;
@@ -81,7 +82,13 @@ class _MotionTabItemState extends State<MotionTabItem> {
                         maxLines: 1,
                         textAlign: TextAlign.center,
                       )
-                    : Text(''),
+                    : Text(
+                  widget.title!,
+                  style: widget.textStyle,
+                  softWrap: false,
+                  maxLines: 1,
+                  textAlign: TextAlign.center,
+                ),
               ),
             ),
           ),
@@ -130,3 +137,4 @@ class _MotionTabItemState extends State<MotionTabItem> {
     );
   }
 }
+
